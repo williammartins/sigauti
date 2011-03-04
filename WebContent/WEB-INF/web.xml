@@ -9,4 +9,15 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>TipoStatusAction</display-name>
+    <servlet-name>TipoStatusAction</servlet-name>
+    <servlet-class>br.com.sigauti.auxiliar.controller.TipoStatusAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TipoStatusAction</servlet-name>
+    <url-pattern>/TipoStatusAction</url-pattern>
+  </servlet-mapping>
+  <description></description>
 </web-app>

@@ -24,7 +24,7 @@ public class ConstantesJDBC {
 	public final static String INTERBASE_PASS      = "masterkey";
 	
 	public final static String MYSQL_DRIVER     = "com.mysql.jdbc.Driver";
-	public final static String MYSQL_URL        = "jdbc:mysql://localhost:3306/central_chamadas";
+	public final static String MYSQL_URL        = "jdbc:mysql://localhost:3306/sigauti";
 	public final static String MYSQL_USER       = "root";
 	public final static String MYSQL_PASS       = "admin";
 
