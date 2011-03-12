@@ -1,21 +1,22 @@
 package br.com.sigauti.auxiliar.controller;
 import java.io.IOException;
+
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import br.com.sigauti.auxiliar.dao.TipoStatusBD;
-import br.com.sigauti.auxiliar.entity.TipoStatus;
+import br.com.sigauti.auxiliar.dao.FilialBD;
+import br.com.sigauti.auxiliar.entity.Filial;
 
 
-public class TipoStatusAction extends HttpServlet {
+public class FilialAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public TipoStatusAction() {
+	public FilialAction() {
 		super();
 	}
 
@@ -24,8 +25,8 @@ public class TipoStatusAction extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		TipoStatusBD bd = new TipoStatusBD();
-		TipoStatus tipostatus = new TipoStatus();
+		FilialBD bd = new FilialBD();
+		Filial filial = new Filial();
 
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
@@ -43,16 +44,16 @@ public class TipoStatusAction extends HttpServlet {
 		if (op.equals("incluir")){
 			
 			String nome = request.getParameter("nome");
-			tipostatus.setDescTipoStatus(nome);
+			filial.setDescFilial(nome);
 		
 			boolean inc = true;
-				inc = bd.incluir(tipostatus);
+				inc = bd.incluir(filial);
 				if (inc){
 					out.println("Cadastrado com Sucesso<br /><br />");
-					out.println("<a href='tipo_status.jsp'>Voltar </a>");
+					out.println("<a href='filial.jsp'>Voltar </a>");
 				}else{
 					out.println("Nao foi possivel incluir!!!<br /><br />");
-					out.println("<a href='tipo_status.jsp'>Voltar </a>");
+					out.println("<a href='filial.jsp'>Voltar </a>");
 				}
 		}
 	}

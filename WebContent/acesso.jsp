@@ -10,28 +10,30 @@
 <title>Sigauti</title>
 
 	<% 
-	TipoStatusBD bd = new TipoStatusBD();
-	List<TipoStatus> lista = bd.listaStatus();
+	AcessoBD bd = new AcessoBD();
+	List<Acesso> lista = bd.listaAcesso();
 	out.println("<table border=5 />");	
-	out.println("<th>ID_STATUS</th>");
-	out.println("<th>NOME</th>");
-	out.println("<th>Ação</th>");
-	out.println("<th>Ação</th>");
+	out.println("<th>ID</th>");
+	out.println("<th>Nome</th>");
+	out.println("<th>Editar</th>");
+	out.println("<th>Excluir</th>");
 	out.println("</tr>");
 	
-	for (TipoStatus a : lista){
+	for (Acesso a : lista){
 		out.println("<tr>");
-		out.println("<td>" +a.getIDTipoStatus()+"</td>");
-		out.println("<td>" +a.getDescTipoStatus()+"</td>");
+		out.println("<td>" +a.getIDAcesso()+"</td>");
+		out.println("<td>" +a.getDescAcesso()+"</td>");
+		out.println("<td>" +"<a href=\"editentity.jsp?entity=acesso&id="+ a.getIDAcesso().toString()+"\"><img src=\"img\\edit.png\"/></a>"+"</td>");
+		out.println("<td>" +"<a href=\"deleteentity.jsp?entity=acesso&id="+ a.getIDAcesso().toString()+"\"><img src=\"img\\delete.png\"/></a>"+"</td>");
 		out.println("</tr>");
 	}
 %>
 
 </head>
-<body bgcolor="Yellow">
+<body>
 
-<h1><u><font face= "Monotype Corsiva" color="Blue" />Cadastro de Status</font></u></h1>
-<form action="TipoStatusAction" method="get">
+<h1><u><font face= "Monotype Corsiva" color="Blue" />Cadastro de Acesso</font></u></h1>
+<form action="AcessoAction" method="get">
 <table border="0">
 <tr>
 <br><td><b>Nome:</b></td>

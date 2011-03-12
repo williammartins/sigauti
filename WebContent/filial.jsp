@@ -10,19 +10,19 @@
 <title>Sigauti</title>
 
 	<% 
-	TipoStatusBD bd = new TipoStatusBD();
-	List<TipoStatus> lista = bd.listaStatus();
+	FilialBD bd = new FilialBD();
+	List<Filial> lista = bd.listaFilial();
 	out.println("<table border=5 />");	
-	out.println("<th>ID_STATUS</th>");
+	out.println("<th>ID_FILIAL</th>");
 	out.println("<th>NOME</th>");
 	out.println("<th>Ação</th>");
 	out.println("<th>Ação</th>");
 	out.println("</tr>");
 	
-	for (TipoStatus a : lista){
+	for (Filial a : lista){
 		out.println("<tr>");
-		out.println("<td>" +a.getIDTipoStatus()+"</td>");
-		out.println("<td>" +a.getDescTipoStatus()+"</td>");
+		out.println("<td>" +a.getIDFilial()+"</td>");
+		out.println("<td>" +a.getDescFilial()+"</td>");
 		out.println("</tr>");
 	}
 %>
@@ -30,8 +30,8 @@
 </head>
 <body bgcolor="Yellow">
 
-<h1><u><font face= "Monotype Corsiva" color="Blue" />Cadastro de Status</font></u></h1>
-<form action="TipoStatusAction" method="get">
+<h1><u><font face= "Monotype Corsiva" color="Blue" />Cadastro de Acesso</font></u></h1>
+<form action="FilialAction" method="get">
 <table border="0">
 <tr>
 <br><td><b>Nome:</b></td>

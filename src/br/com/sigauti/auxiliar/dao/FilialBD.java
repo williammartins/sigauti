@@ -2,22 +2,21 @@ package br.com.sigauti.auxiliar.dao;
 
 import java.sql.Connection;
 
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import br.com.sigauti.auxiliar.entity.TipoStatus;
+import br.com.sigauti.auxiliar.entity.Filial;
 import br.com.sigauti.connection.Conexao;
 import br.com.sigauti.connection.ConstantesJDBC;
 
-public class TipoStatusBD {
+public class FilialBD {
 
 	private static Connection conn = null;
 	
-	public TipoStatusBD() {
+	public FilialBD() {
 
 		try {
 			conn = Conexao.conectar(ConstantesJDBC.MYSQL_DRIVER,
@@ -34,7 +33,7 @@ public class TipoStatusBD {
 	}
 	
 	// Método que Inclui
-	public boolean incluir(TipoStatus tipostatus) {
+	public boolean incluir(Filial filial) {
 
 		boolean resultado = true;
 
@@ -44,9 +43,9 @@ public class TipoStatusBD {
 			return false;
 		}
 		
-		String sql = "INSERT INTO TIPOSTATUS (DESCTIPOSTATUS) VALUES (?)";
+		String sql = "INSERT INTO FILIAL(DESCFILIAL) VALUES (?)";
 
-			String nome = tipostatus.getDescTipoStatus();
+			String nome = filial.getDescFilial();
 			
 			try
 			{
@@ -71,9 +70,9 @@ public class TipoStatusBD {
 		return resultado;
 	}
 
-	public List<TipoStatus> listaStatus() {
+	public List<Filial> listaFilial() {
 
-		List<TipoStatus> lista = new ArrayList<TipoStatus>();
+		List<Filial> lista = new ArrayList<Filial>();
 		Statement query = null;
 		ResultSet rs = null;
 
@@ -81,13 +80,13 @@ public class TipoStatusBD {
 			try {
 				query = conn.createStatement();
 
-				rs = query.executeQuery("SELECT * FROM TIPOSTATUS");
+				rs = query.executeQuery("SELECT * FROM FILIAL");
 				
 				while(rs.next()){
-				TipoStatus tipostatus = new TipoStatus();
-				tipostatus.setIDTipoStatus(rs.getInt(1));
-				tipostatus.setDescTipoStatus(rs.getString(2));
-				lista.add(tipostatus);
+				Filial filial = new Filial();
+				filial.setIDFilial(rs.getInt(1));
+				filial.setDescFilial(rs.getString(2));
+				lista.add(filial);
 			}
 			rs.close();
 				conn.close();

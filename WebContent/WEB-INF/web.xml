@@ -20,4 +20,28 @@
     <url-pattern>/TipoStatusAction</url-pattern>
   </servlet-mapping>
   <description></description>
+  
+  <servlet>
+    <description></description>
+    <display-name>AcessoAction</display-name>
+    <servlet-name>AcessoAction</servlet-name>
+    <servlet-class>br.com.sigauti.auxiliar.controller.AcessoAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AcessoAction</servlet-name>
+    <url-pattern>/AcessoAction</url-pattern>
+  </servlet-mapping>
+  <description></description>
+  
+  <servlet>
+    <description></description>
+    <display-name>FilialAction</display-name>
+    <servlet-name>FilialAction</servlet-name>
+    <servlet-class>br.com.sigauti.auxiliar.controller.FilialAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FilialAction</servlet-name>
+    <url-pattern>/FilialAction</url-pattern>
+  </servlet-mapping>
+  <description></description>
 </web-app>
